@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ai-agent
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD}
+      timeout: 2000ms
+
+langchain4j:
+  open-ai:
+    chat-model:
+      base-url: ${OPENAI_BASE_URL:https://api.minimax.io/v1}
+      api-key: ${OPENAI_API_KEY}
+      model-name: ${OPENAI_MODEL:MiniMax-M3}
+      temperature: 0.7
+      timeout: 60s
+      max-retries: 3
+      log-requests: true
+      log-responses: true
+
+agent:
+  memory:
+    max-messages: 10
+    default-id: default
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
