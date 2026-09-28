@@ -20,11 +20,11 @@ class AgentRunner(
         val memoryId = properties.memory.defaultId
 
         log.info("Sending first request to agent (memoryId={})", memoryId)
-        val response = agent.chat(memoryId, "Привет! Посчитай, пожалуйста, факториал числа 6.")
+        val response = agent.chat(memoryId, "Какая погода сейчас в Москве?")
         log.info("Agent response: {}", response)
 
         log.info("Sending follow-up request to test Redis-backed memory")
-        val response2 = agent.chat(memoryId, "Выведи результат прошлого вычисления")
+        val response2 = agent.chat(memoryId, "Выведи результат прошлого запроса")
         log.info("Agent response: {}", response2)
     }
 }

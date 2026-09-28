@@ -20,6 +20,15 @@ langchain4j:
       log-requests: true
       log-responses: true
 
+mcp:
+  weather:
+    url: ${MCP_WEATHER_URL:https://weatherapi.projecteol.ru/mcp/}
+    timeout: ${MCP_TIMEOUT:60s}
+    log-requests: ${MCP_LOG_REQUESTS:false}
+    log-responses: ${MCP_LOG_RESPONSES:false}
+    client-name: ${MCP_CLIENT_NAME:ai-agent}
+    client-version: ${MCP_CLIENT_VERSION:1.0.0}
+
 agent:
   memory:
     max-messages: 10

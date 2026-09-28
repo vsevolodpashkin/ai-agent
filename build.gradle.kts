@@ -20,6 +20,11 @@ dependencies {
     implementation("dev.langchain4j:langchain4j-open-ai:1.0.0-beta1")
     implementation("dev.langchain4j:langchain4j-spring-boot-starter:1.0.0-beta1")
     implementation("dev.langchain4j:langchain4j-open-ai-spring-boot-starter:1.0.0-beta1")
+    // MCP (Model Context Protocol) — для подключения внешних инструментов через SSE/HTTP
+    implementation("dev.langchain4j:langchain4j-mcp:1.0.0-beta1")
+    // Требуется Spring Boot 4 для биндинга Kotlin data class через @ConfigurationProperties
+    // (KotlinValueObject использует kotlin.reflect.jvm.ReflectJvmMapping)
+    implementation(kotlin("reflect"))
     testImplementation(kotlin("test"))
     testImplementation("org.springframework.boot:spring-boot-starter-test:4.1.1")
 }
