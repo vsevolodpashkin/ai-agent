@@ -9,14 +9,6 @@ import org.springframework.data.redis.core.StringRedisTemplate
 import org.springframework.stereotype.Component
 import java.time.Duration
 
-/**
- * Persists chat history as JSON strings in Redis under the key `chat:<memoryId>`.
- * Serialization delegated to langchain4j's built-in ChatMessageSerializer/Deserializer,
- * which handle polymorphic ChatMessage subtypes (UserMessage, AiMessage, etc.) correctly.
- *
- * StringRedisTemplate is auto-configured by spring-boot-starter-data-redis from
- * `spring.data.redis.*` properties.
- */
 @Component
 class RedisChatMemoryStore(
     private val redis: StringRedisTemplate

@@ -16,12 +16,12 @@ import org.springframework.context.annotation.Configuration
 class AgentConfig {
 
     @Bean
-    fun mathAgent(
+    fun standardAgent(
         chatLanguageModel: ChatLanguageModel,
         chatMemoryProvider: ChatMemoryProvider,
         mathTools: MathTools,
         @Qualifier("compositeToolProvider") toolProvider: ToolProvider
-    ): MathAgent = AiServices.builder(MathAgent::class.java)
+    ): StandardAgent = AiServices.builder(StandardAgent::class.java)
         .chatLanguageModel(chatLanguageModel)
         .chatMemoryProvider(chatMemoryProvider)
         .toolProvider(toolProvider)
